@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Needle Trail oynanabilir reklam: varyant önizleme</title>
+<style>body{margin:0;font:15px -apple-system,system-ui,sans-serif;background:#EDE7DA;color:#1E2A52;display:flex;flex-direction:column;align-items:center}
+h1{font-size:18px;margin:16px 0 6px}.bar{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:6px}
+button{font:600 14px -apple-system,system-ui,sans-serif;border:2px solid #1E2A52;background:#fff;color:#1E2A52;border-radius:18px;padding:7px 14px;cursor:pointer}
+button.on{background:#1E2A52;color:#fff}#d{max-width:640px;text-align:center;margin:4px 12px 10px;min-height:38px}
+#f{border:10px solid #1E2A52;border-radius:34px;background:#F3EEE4}</style></head><body>
+<h1>Needle Trail oynanabilir reklam: varyant önizleme</h1>
+<div class="bar"><button data-v="v1">V1 · Tek sürüş</button><button data-v="v2">V2 · Çıkmaz, geri sar, bul</button><button data-v="v3">V3 · Ödül önce</button></div>
+<div class="bar"><button id="o">Dikey / yatay</button><button id="r">Yeniden başlat</button><a id="n" href="#" target="_blank" style="align-self:center">Tam ekran aç</a></div>
+<div id="d"></div><iframe id="f" width="390" height="844"></iframe>
+<script>var D={"v1": "Kontrol. L1 Kalp yarım dikili açılır, el kalan yolu gösterir; tek sürüklemeyle biter, sonra L2 Elma.", "v2": "Ana aday. L1 Kalp çıkmazda açılır: bir kare dışarıda kalmış, oyunun uyarısı nabız atıyor; el geri sarmayı gösterir, oyuncu doğru yolu bulur. Sonra L2 Elma.", "v3": "İkinci dalga. Bitmiş Yıldız motifi 1,4 sn görünür, boş 5x5 tahtaya çözülür (dokunuş atlar). El yalnız ilk sürüklemede; ipucu düğmesi (1 hak)."},cur="v1",land=false,f=document.getElementById("f");
+function go(v){cur=v;var u=v+"/index.html";f.src=u+"?t="+Date.now();document.getElementById("n").href=u;document.getElementById("d").textContent=D[v];
+document.querySelectorAll("button[data-v]").forEach(function(b){b.className=b.dataset.v===v?"on":""})}
+document.querySelectorAll("button[data-v]").forEach(function(b){b.onclick=function(){go(b.dataset.v)}});
+document.getElementById("o").onclick=function(){land=!land;f.width=land?844:390;f.height=land?390:844;go(cur)};
+document.getElementById("r").onclick=function(){go(cur)};go(location.hash.slice(1)||"v1");</script></body></html>
